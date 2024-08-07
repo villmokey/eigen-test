@@ -17,6 +17,7 @@ model Member {
   code String @id @db.VarChar(20)
   name String @db.VarChar(100)
   is_penalize Boolean @default(false)
+  penalize_until DateTime?
   transactions Transaction[]
 
   @@map("members")

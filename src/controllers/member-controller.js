@@ -4,7 +4,7 @@ import ResponseSuccess from "../utils/response-sucess.js";
 const create = async (req, res, next) => {
   try {
     const query = await memberService.create(req.body);
-    res.status(200).json(ResponseSuccess("Success to create book", query))
+    res.status(200).json(ResponseSuccess("Success to create member", query))
   } catch (error) {
     next(error)
   }
@@ -13,7 +13,7 @@ const create = async (req, res, next) => {
 const list = async (req, res, next) => {
   try {
     const query = await memberService.list()
-    res.status(200).json(ResponseSuccess("Success to list the books", query))
+    res.status(200).json(ResponseSuccess("Success to list the members", query))
   } catch (error) {
     next(error)
   }

@@ -16,7 +16,20 @@ const create = async (request) => {
 }
 
 const list = async () => {
-  return await prismaClient.member.findMany();
+  const members = await prismaClient.member.findMany({
+    include: {
+      transactions: {
+        where: {
+          is_return: false
+        }
+      }
+    }
+  });
+
+  return members.map(item => ({
+    ...item,
+    borrowed_book_count: item.transactions.length
+  }))
 }
 
 export default {

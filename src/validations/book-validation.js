@@ -1,8 +1,8 @@
 import Joi from 'joi'
 
 const borrowBookValidation = Joi.object({
-  book_code: Joi.string().max(20).required(),
-  member_code: Joi.string().max(20).required()
+  member_code: Joi.string().max(20).required(),
+  book_codes: Joi.array().items(Joi.string().max(20).required()).required(),
 })
 
 const createBookValidation = Joi.object({
@@ -13,8 +13,8 @@ const createBookValidation = Joi.object({
 })
 
 const returnBookValidation = Joi.object({
-  book_code: Joi.string().max(20).required(),
-  member_code: Joi.string().max(20).required()
+  member_code: Joi.string().max(20).required(),
+  book_codes: Joi.array().items(Joi.string().max(20).required()),
 })
 
 export {
