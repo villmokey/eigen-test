@@ -14,3 +14,7 @@
 6. Use `npm run dev` to run the app
 
 you can also run the tests by using `npm run test`
+
+# Eigen Algoritm Test
+
+You can find the folder `algoritma_test` that contains the answer of the tests
